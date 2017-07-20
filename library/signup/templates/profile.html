@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+<html lang="en">
+<head>
+ {% block head %}
+    <title>profile</title>
+    {% endblock %}
+  </head>
+<body>
+{% block content %}
+
+<h3>welcome '{{request.user.username}}'</h3>
+
+<table class="table table-bordered" >
+<tr>
+  <th>Author</th>
+  <th>Title</th>
+  <th>Lend</th>
+  <th>Return </th>
+</tr>
+{% for b in obj %}
+<tr>
+  <td>{{ b.author }}</td>
+  <td>{{ b.title }}</td>
+  <td><a href="{% url 'lend'  %}" value= "{{ b.title }}">Lend Book</a></td>
+  <td><a href="{% url 'return' %}" value="{{ b.title }}">Return Book</a></td>
+</tr>
+{% endfor %}
+</table>
+
+
+
+<a href="{% url 'logout' %}" class="btn btn-lg btn-default">Log Out</a>	 
+
+{% endblock %}
+</body>
+</html>

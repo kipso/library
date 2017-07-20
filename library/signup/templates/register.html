@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+<html lang="en">
+<head>
+ {% block head %}
+    <title>Registration</title>
+    {% endblock %}
+  </head>
+
+<body>
+{% block content %}
+	
+    <form method="post" class ="form">
+      {% csrf_token %}
+      <div class="col-lg-3">
+
+      {% bootstrap_form form %}
+      	<button class="btn btn-primary " type="submit">Submit</button>
+      </div>       
+    </form>
+  
+  {% endblock %}
+</body>
+</html>

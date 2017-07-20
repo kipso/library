@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Library Management</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href= "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href= "{% static 'bootstrap.min.css' %}" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <!-- Custom styles for this template -->
+   <!-- <link href="{ % static 'style.css' % }" rel="stylesheet">-->
+
+  </head>
+
+  <body>
+        <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Library</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="{% url 'login' %}">Sign In</a></li>
+                  <li><a href="{% url 'about' %}">About</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Library Management.</h1>
+            <p class="lead">My books are very few, but then the world is before me - a library open to all - from which poverty of purse cannot exclude me - in which the meanest and most paltry volume is sure to furnish something to amuse, if not to instruct and improve.</p>
+            <p class="lead">
+              <a href="{% url 'register' %}" class="btn btn-lg btn-default">Sign Up</a>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Contact Us 
+                <a href="https://www.facebook.com/kipsostephin.stephin" class="btn btn-social-icon btn-facebook">
+                <span class="fa fa-facebook"></span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
